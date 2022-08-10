@@ -1,18 +1,33 @@
-import './App.css';
-import {
-  BrowserRouter,
-  NavLink,
-} from 'react-router-dom';
+import "./App.css";
+import { BrowserRouter, NavLink, useNavigate } from "react-router-dom";
 
 const Todo = () => {
-  return <p>這是 Todo 頁面 
-  </p>;
+  return (
+    <>
+      <p>Todo</p>
+      <LogOut />
+    </>
+  );
 };
+
 const Login = () => {
   return <p>這是登入頁面</p>;
 };
 const Register = () => {
   return <p>這是註冊頁面</p>;
+};
+
+const LogOut = () => {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => {
+        navigate("/login");
+      }}
+    >
+      登出
+    </button>
+  );
 };
 
 function App() {
@@ -34,6 +49,9 @@ function App() {
           </NavLink>
         </div>
         {/* Routes, Route 練習區 */}
+
+        <Todo />
+
         {/* 練習區 */}
       </BrowserRouter>
     </div>
