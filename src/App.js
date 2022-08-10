@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter, NavLink, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  NavLink,
+  useNavigate,
+} from "react-router-dom";
 
 const Todo = () => {
   return (
@@ -49,9 +55,11 @@ function App() {
           </NavLink>
         </div>
         {/* Routes, Route 練習區 */}
-
-        <Todo />
-
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Todo" element={<Todo />} />
+        </Routes>
         {/* 練習區 */}
       </BrowserRouter>
     </div>
